@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Photos</title>
+	<link href="common.css" rel="stylesheet" type="text/css" />
+	<script src="jquery.js" lang="javascript"></script>
+	<script src="common.js" lang="javascript"></script>
+</head>
+
+<body onload="init();">
+	<div id="viewer_top">
+		<div id="viewer">
+			<div id="v_header">
+				<div id="photo_title"></div>
+				<div class="sep"></div>
+				<div class="count">
+					<span id="current"></span> of <span id="all"></span> 
+				</div>
+				<div id="close" onclick="closePhoto();">close</div>
+			</div>
+			<div id="hor_sep"></div>
+			<img src="" id="big_img" onclick="next_photo();"></img>
+		</div>
+	</div>
+	<div id="viewer_bg">
+	</div>
+	<div id="top">
+		<form method="post" action="upload.php" id="uploadForm" enctype="multipart/form-data">
+			<h2>Upload a photo <span id="cancel" onclick="hide();">Cancel</span></h2>
+			<input type="file" name="path" accept="image/*"></input><br/>
+			<input type="text" name="title" placeholder="Title"></input>
+			<input type="submit" value="Upload"></input>
+		</form>
+	</div>
+	<div id="header">
+		<div class="wrap">
+			<div id="logo">Photos</div>
+			<div id="upload" onclick="show();">Upload</div>
+		</div>
+	</div>
+	<div class="wrap">
+		<div id="content"></div>
+	</div>
+</body>
+</html>
